@@ -43,9 +43,9 @@ public class FallAndLandWithLog {
 		c = 0;
 	    }
 	}
-	System.out.print("estimated distance = " + x + "\n");
-	System.out.print("landing y speed = " + y_speed + "\n");
-	System.out.print("rest fuel = " + y_fuel + "\n");
+	System.err.print("estimated distance = " + x + "\n");
+	System.err.print("landing y speed = " + y_speed + "\n");
+	System.err.print("rest fuel = " + y_fuel + "\n");
 
 	return;
     }
