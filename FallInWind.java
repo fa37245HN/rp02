@@ -6,6 +6,8 @@ public class FallInWind {
 	double r;
 	double g;
 
+	int n;
+
 	String buf;
 
 	g = -9.80665;
@@ -22,7 +24,7 @@ public class FallInWind {
 
 	try {
 	    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-	    System.err.print("x_wind_speed = ");
+	    System.err.print("Wind Speed = ");
 	    buf = br.readLine();
 	    x_wind_speed1 = Double.parseDouble(buf);
 	} catch(Exception e) {
@@ -42,6 +44,9 @@ public class FallInWind {
 	}
 
 	System.out.print("estimated distance = " + x + "\n");
+
+	n = (int)(x / 100) * 100;
+	System.out.print("estimated distance is approximately " + n + "[m]" + "\n");
 
     }
 }
