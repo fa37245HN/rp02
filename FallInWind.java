@@ -1,8 +1,12 @@
+import java.io.*;
+
 public class FallInWind {
     public static void main(String args[]) {
 	double x, y, x_speed, y_speed, x_initial_speed, x_wind_speed1;
 	double r;
 	double g;
+
+	String buf;
 
 	g = -9.80665;
 
@@ -15,6 +19,15 @@ public class FallInWind {
 	y_speed = 0;
 
 	r = 100000;
+
+	try {
+	    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	    System.err.print("x_wind_speed = ");
+	    buf = br.readLine();
+	    x_wind_speed1 = Double.parseDouble(buf);
+	} catch(Exception e) {
+	    System.out.print("Error:" + e);
+	}
 
 	while(y >= 0) {
 	    y_speed += g/r;
