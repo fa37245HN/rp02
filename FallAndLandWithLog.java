@@ -1,3 +1,5 @@
+import java.io.*;
+
 public class FallAndLandWithLog {
     public static void main(String args[]) {
 	double x, y, x_speed, y_speed, x_initial_speed, x_wind_speed1;
@@ -5,6 +7,8 @@ public class FallAndLandWithLog {
 	double r;
 	double g;
 	int c;
+
+	String buf;
 
 	g = -9.80665;
 
@@ -23,6 +27,23 @@ public class FallAndLandWithLog {
 	r = 100000;
 
 	c = 0;
+
+	try {
+	    BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+	    System.err.print("y_brking_point = ");
+	    buf = br.readLine();
+	    y_braking_point = Double.parseDouble(buf);
+	    System.err.print("y_fuel = ");
+	    buf = br.readLine();
+	    y_fuel = Double.parseDouble(buf);
+	    System.err.print("y_power = ");
+	    buf = br.readLine();
+	    y_power = Double.parseDouble(buf);
+
+	} catch(Exception e) {
+	    System.err.print("Error:" + e);
+	}
+
 	while(y >= 0) {
 	    y_speed += g/r;
 
